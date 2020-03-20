@@ -1,0 +1,39 @@
+Computational Biology Laboratory, Danish Cancer Society Research Center, Strandboulevarden 49, 2100, Copenhagen, Denmark
+
+This repository contains the input data for the docking calculations of  different substrates described in the paper, the outputs from the LeDock program. All the analysis were done on the docking poses obtained by LeDock program so all the subfolders with analysis can be found in the LeDock folder for every substrate. Analysis folders include calculation of RMSD values, and redocking of selected poses in AutoDockVina program to estimate binding energy for the poses obtained by LeDock program.  
+
+The main folder in the repository contains:
+
+-1kkr_chainB_Aminoadipate_ledock_addedH_yesMg_noH2O_box_60x60x60_RMSDcufoff_0.5
+-1kkr_chainB_Aminobutanoic.acid_ledock_addedH_yesMg_noH2O_box_60x60x60_RMSDcutoff_0.5
+-1kkr_chainB_Lys_ledock_addedH_yesMg_noH2O_box_60x60x60_RMSDcutoff_0.5
+-1kkr_chainB_aspartic.acid_ledock_addedH_yesMg_noH2O_box_60x60x60_RMSDcutoff_0.5
+-1kkr_chainB_betaLys_ledock_addedH_yesMg_noH2O_box_60x60x60_RMSDcutoff_0.5
+-1kkr_chainB_betaglutamic.acid_ledock_addedH_yesMg_noH2O_box_60x60x60_RMSDcutoff_0.5
+
+Each of these folders contains subfolders:
+-docking_poses
+Contains executable (ledock_linux_x86) and input files for LeDock program (dock.in, ligand.list, [small_molecule].mol2, chainB_addedH_deleteH2O.pdb) and also output files (docking_poses.pdb) obtained with command: ./ledock_linux_x86 dock.in -spli 
+
+-distance_measurements
+Contains scripts needed for distance calculations (script_distance.py,  script_distance_calculation.sh, script_important_atoms.dat, script_in_pocket.py) between significant atoms in important residues in catalitic pocket and atoms in docked positions). There is also output file containing calculated distances (script_output_distances.dat) obtained using: ./script_distance_calculation.sh
+
+-rmsd_only_for_atoms_similar_as_in_metylASP
+Contains coordinates of the natural substrates position (methylaspartate_natural_supstrant_position_chainB.pdb) and scripts for the calculation of RMSD between docked poses and natural substrate position. Because natural substrate and docked structure differen in certain atoms, RMSD is calculated only for the atoms that these structures have in common. Preparing the input files so that RMSD in calcuated only on common atoms is done by:
+./script_prepare_input_for_rmsd_specific_atoms.sh
+Later, RMSD is calcualted: ./script_find_min_RMSD_in_docking_poses.py and output file with the 5 lowest RMSD values is obtained (script_find_min_RMSD_in_docking_poses_output.dat)
+
+-rmsd_1st_pose_Arpeggio
+Contains files related to Arpeggio analysis of interactions between protein and the first docking pose. There is also additional README file describing the neccessary steps for this analyis. 
+There is also R script (bar_plot_diferent_interactions.R) used to obtain box plot figure for the graphical representation of all the interactions.
+
+-rmsd_lowest_values_Arpeggio_[number]pose
+Similar to the previous folder, this one contains files related to Arpeggio analysis of interactions between protein and the selected docking pose(the one with the lowest RMSD value). There is also additional README file describing the neccessary steps for this analyis.  
+There is also R script (bar_plot_diferent_interactions.R) used to obtain box plot figure for the graphical representation of all the interactions.
+
+-rescoring_AutoDockVina
+This folder contains rescoring of the first and selected pose obtained from LeDock program in the AutoDockVina program. Input files (protein_format.conf, protein_format.ligand.pdb, protein_format.receptor.pdb) contain data on the settings for AutoDockVina and docked pose obtained from LeDock program which are now just rescored using command:
+vina --config protein_format.conf  --score_only
+
+
+

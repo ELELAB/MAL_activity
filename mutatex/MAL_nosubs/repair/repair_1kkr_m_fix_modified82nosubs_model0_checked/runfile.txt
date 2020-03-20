@@ -1,0 +1,7 @@
+command=RepairPDB
+pdb=1kkr_m_fix_modified82nosubs_model0_checked.pdb
+
+temperature=298
+water=-CRYSTAL
+complexWithDNA=true
+outPDB=true

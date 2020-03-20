@@ -1,0 +1,5 @@
+Computational Biology Laboratory, Danish Cancer Society Research Center, Strandboulevarden 49, 2100, Copenhagen, Denmark
+
+This folder contains input and output files from the modeller step on 1KKR considering only one monomer (chain A) was used. Modeller9.16 was used to replace the selenomethionines with methionines and to add two missing amino acids at the C-terminal of the protein
+
+
