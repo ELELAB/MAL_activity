@@ -2,8 +2,7 @@ Computational Biology Laboratory, Danish Cancer Society Research Center, Strandb
 
 Repository associated to the publication:
 
-Structure-function investigation of 3-methylaspartate ammonia lyase reveals substrate molecular determinants for the deamination reaction
-Veronica Saez-Jimenez, Zeljka Sanader Marsic, Matteo Lambrughi, Jae Ho Shin, Robin Van Havere, Elena Papaleo, Lisbeth Olsson, Valeria Mapelli,PLOS ONE, under revision
+Saez-Jimenez V, Maršić ŽS, Lambrughi M, Shin JH, van Havere R, Papaleo E, Olsson L, Mapelli V. Structure-function investigation of 3-methylaspartate ammonia lyase reveals substrate molecular determinants for the deamination reaction. PLoS One. 2020 May 21;15(5):e0233467. doi:10.1371/journal.pone.0233467
 
 contacts for the repository:
 
